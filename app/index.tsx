@@ -70,8 +70,8 @@ export default function Home() {
       
       {/* --- Header --- */}
       <View className="mb-10">
-        <Text className="text-4xl font-bold text-gray-800 text-center tracking-tight">
-          Bugün İçin {'\n'}Bir Öneri Seç!
+        <Text className="text-4xl font-interSemi text-gray-800 text-center tracking-tight">
+          Bugün İçin{'\n'}Bir Öneri Seç!
         </Text>
       </View>
 
@@ -88,7 +88,7 @@ export default function Home() {
             
             {/* Metin Alanı */}
             <View className="items-center p-2 gap-2">
-                <Text className="text-2xl font-bold text-gray-900 text-center px-4 leading-8">
+                <Text className="text-2xl font-code text-gray-900 text-center px-4 leading-8">
                 {currentSuggestion.text}
                 </Text>
             </View>
@@ -101,7 +101,7 @@ export default function Home() {
         activeOpacity={0.8}
         className="bg-[#FF8865] flex-row items-center justify-center px-8 py-4 rounded-full shadow-lg shadow-orange-200 mb-8 w-64"
       >
-        <Text className="text-white font-bold text-lg mr-2">Ne Yapalım?</Text>
+        <Text className="text-white font-inter text-lg mr-2">Ne Yapalım?</Text>
         <RefreshCw size={20} color="white" strokeWidth={2.5} />
       </TouchableOpacity>
 
