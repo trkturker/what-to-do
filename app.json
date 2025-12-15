@@ -1,9 +1,9 @@
 {
   "expo": {
-    "name": "what-to-do",
-    "slug": "what-to-do",
+    "name": "What To Do Today",
+    "slug": "What To Do Today",
     "version": "1.0.0",
-    "scheme": "what-to-do",
+    "scheme": "What To Do Today",
     "platforms": [
       "ios",
       "android"

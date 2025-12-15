@@ -7,13 +7,13 @@ import { GlassWater, BookOpen, MessageCircle, Music, Wind, Phone, Smile, Globe, 
 // Önerileri ikonlarıyla eşleştirelim ki görseldeki gibi zengin dursun
 const suggestionsData = [
   { id: 1, text: 'Bir bardak su iç', icon: <GlassWater size={80} color="#3B82F6" />, },
-  { id: 2, text: '1 sayfa kitap oku', icon: <BookOpen size={80} color="#8B5CF6" />, },
+  { id: 2, text: '5 sayfa kitap oku', icon: <BookOpen size={80} color="#8B5CF6" />, },
   { id: 3, text: 'Birine mesaj at', icon: <MessageCircle size={80} color="#10B981" />, },
   { id: 4, text: 'Sevdiğin şarkıyı aç', icon: <Music size={80} color="#F59E0B" />, },
-  { id: 5, text: 'Odanı havalandır', icon: <Wind size={80} color="#6366F1" />, },
+  { id: 5, text: 'Odanı havalandır ve temizle', icon: <Wind size={80} color="#6366F1" />, },
   { id: 6, text: 'Bir arkadaşını ara', icon: <Phone size={80} color="#EC4899" />, },
   { id: 7, text: 'Gülümse', icon: <Smile size={80} color="#EAB308" />, },
-  { id: 8, text: 'Yeni bir ülkeyi keşfet ve kültürünü öğren ', icon: <Globe size={80} color="#0EA5E9" />, },
+  { id: 8, text: 'Yeni bir ülkeyi araştır ve kültürünü öğren ', icon: <Globe size={80} color="#0EA5E9" />, },
 ];
 
 export default function Home() {
@@ -65,12 +65,10 @@ export default function Home() {
   };
 
   return (
-    <View className="flex-1 bg-gray-50 items-center justify-center pt-10">
-      <Stack.Screen options={{ headerShown: false }} />
-      
+    <View className="flex-1 bg-gray-50 items-center justify-center font-code pt-10">
       {/* --- Header --- */}
       <View className="mb-10">
-        <Text className="text-4xl font-interSemi text-gray-800 text-center tracking-tight">
+        <Text className="text-4xl text-gray-800 text-center font-semibold leading-tight">
           Bugün İçin{'\n'}Bir Öneri Seç!
         </Text>
       </View>
@@ -109,7 +107,7 @@ export default function Home() {
       <View className="flex-row justify-center items-center w-72 px-4">
         {/* Sol: Bunu Yaptım */}
         <TouchableOpacity className="flex-row items-center gap-2" onPress={handleDoneCheck}>
-            <Text className={`${done ? 'text-green-600' : 'text-gray-400'}  font-medium text-base`}>Bunu Yaptım!</Text>
+            <Text className={`${done ? 'text-green-600' : 'text-gray-400'} font-code font-medium text-base`}>Bunu Yaptım!</Text>
             <View className={`${done ? 'bg-green-600' : 'bg-gray-400'} rounded-full`}>
               { done ? 
                 <CircleCheckBig size={20} color="white" /> 
