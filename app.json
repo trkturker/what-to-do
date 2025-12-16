@@ -1,9 +1,9 @@
 {
   "expo": {
-    "name": "What To Do Today",
-    "slug": "What To Do Today",
+    "name": "WhatToDoToday",
+    "slug": "WhatToDoToday",
     "version": "1.0.0",
-    "scheme": "What To Do Today",
+    "scheme": "WhatToDoToday",
     "platforms": [
       "ios",
       "android"
@@ -39,7 +39,8 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.turker.WhatToDoToday"
     }
   }
 }

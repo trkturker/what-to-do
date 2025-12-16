@@ -17,11 +17,9 @@ const suggestionsData = [
 ];
 
 export default function Home() {
-  // Başlangıçta rastgele bir öneri ile başlayalım
   const [currentSuggestion, setCurrentSuggestion] = useState(suggestionsData[0]);
     const [done, setDone] = useState(false)
   
-  // Animasyon değerleri
   const cardScale = useSharedValue(1);
   const cardOpacity = useSharedValue(1);
 
@@ -39,26 +37,20 @@ export default function Home() {
   }
 
   const getNewSuggestion = () => {
-    // 1. Kartı küçült ve yok et
     setTimeout(() => {setDone(false);}, 500);
     
 
     cardScale.value = withTiming(0.8, { duration: 150 });
     cardOpacity.value = withTiming(0, { duration: 150 }, () => {
-      // 2. Yeni veriyi seç (State update)
       const randomIndex = Math.floor(Math.random() * suggestionsData.length);
-      // Aynı öneri gelmesin diye basit bir kontrol
       let newSuggestion = suggestionsData[randomIndex];
       
-      // JS thread içinde state update (Reanimated runOnJS gerekebilir ama basit yapıda useEffect bunu yakalar veya doğrudan setleriz)
     });
 
-    // Timeout ile senkronize hissettirelim (State update sonrası animasyonu geri aç)
     setTimeout(() => {
        const randomIndex = Math.floor(Math.random() * suggestionsData.length);
        setCurrentSuggestion(suggestionsData[randomIndex]);
        
-       // 3. Kartı büyüt ve göster (Spring efekti ile canlılık katalım)
        cardScale.value = withSpring(1);
        cardOpacity.value = withTiming(1);
     }, 200);
@@ -66,25 +58,21 @@ export default function Home() {
 
   return (
     <View className="flex-1 bg-gray-50 items-center justify-center font-code pt-10">
-      {/* --- Header --- */}
       <View className="mb-10">
         <Text className="text-4xl text-gray-800 text-center font-semibold leading-tight">
           Bugün İçin{'\n'}Bir Öneri Seç!
         </Text>
       </View>
 
-      {/* --- Card Area --- */}
       <Animated.View 
         style={[animatedCardStyle]}
         className="bg-white w-96 h-96 rounded-3xl items-center justify-center shadow-xl shadow-gray-200 mb-12 border border-gray-100"
       >
         <View className="items-center space-y-6">
-            {/* İkon Alanı */}
             <View className="bg-blue-50 p-4 rounded-3xl">
                 {currentSuggestion.icon}
             </View>
             
-            {/* Metin Alanı */}
             <View className="items-center p-2 gap-2">
                 <Text className="text-2xl font-code text-gray-900 text-center px-4 leading-8">
                 {currentSuggestion.text}
@@ -93,7 +81,6 @@ export default function Home() {
         </View>
       </Animated.View>
 
-      {/* --- Primary Button (Turuncu/Somon Buton) --- */}
       <TouchableOpacity 
         onPress={getNewSuggestion}
         activeOpacity={0.8}
@@ -103,9 +90,7 @@ export default function Home() {
         <RefreshCw size={20} color="white" strokeWidth={2.5} />
       </TouchableOpacity>
 
-      {/* --- Footer Actions (Yapıldı / Pas Geç) --- */}
       <View className="flex-row justify-center items-center w-72 px-4">
-        {/* Sol: Bunu Yaptım */}
         <TouchableOpacity className="flex-row items-center gap-2" onPress={handleDoneCheck}>
             <Text className={`${done ? 'text-green-600' : 'text-gray-400'} font-code font-medium text-base`}>Bunu Yaptım!</Text>
             <View className={`${done ? 'bg-green-600' : 'bg-gray-400'} rounded-full`}>
