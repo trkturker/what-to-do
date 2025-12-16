@@ -15,4 +15,4 @@ Bu uygulama, kullanıcılara gün içinde yapabilecekleri rastgele öneriler sun
 ## Ekran Görüntüsü
 
 
-![Ekran Görüntüsü](assets/screenshot.jpg)
+<img src="assets/screenshot.jpg" alt="Ekran Görüntüsü" width="300"/>
