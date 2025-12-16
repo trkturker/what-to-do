@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "WhatToDoToday",
-    "slug": "WhatToDoToday",
+    "slug": "whattodotoday",
     "version": "1.0.0",
     "scheme": "WhatToDoToday",
     "platforms": [
@@ -41,6 +41,13 @@
         "backgroundColor": "#ffffff"
       },
       "package": "com.turker.WhatToDoToday"
-    }
+    },
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "c411aa32-de79-4a19-95a5-7717b4eb7be8"
+      }
+    },
+    "owner": "turkers-organization"
   }
 }
