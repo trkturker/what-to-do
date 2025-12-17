@@ -12,6 +12,12 @@ Bu uygulama, kullanıcılara gün içinde yapabilecekleri rastgele öneriler sun
 - **React Native Reanimated**: Akıcı animasyonlar oluşturmak için kullanılmıştır.
 - **Lucide React Native**: İkonlar için kullanılmıştır.
 
+## Kullanılan Teknolojiler
+
+- **npm install**
+- **npx expo run:android** ya da
+- **npx expo run:ios**
+
 ## Ekran Görüntüsü
 
 
